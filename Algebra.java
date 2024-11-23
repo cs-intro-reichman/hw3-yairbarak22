@@ -6,7 +6,7 @@
 public class Algebra {
 	public static void main(String args[]) {
 	    // Tests some of the operations
-	    System.out.println(plus(2,3));   // 2 + 3
+	   System.out.println(plus(2,3));   // 2 + 3
 	    System.out.println(minus(7,2));  // 7 - 2
    		System.out.println(minus(2,7));  // 2 - 7
  		System.out.println(times(3,4));  // 3 * 4
@@ -17,7 +17,7 @@ public class Algebra {
    		System.out.println(div(5,5));    // 5 / 5  
    		System.out.println(div(25,7));   // 25 / 7
    		System.out.println(mod(25,7));   // 25 % 7
-   		System.out.println(mod(120,6));  // 120 % 6    
+   		System.out.println(mod(120,6));  // 120 % 6  
    		System.out.println(sqrt(36));
 		System.out.println(sqrt(263169));
    		System.out.println(sqrt(76123));
@@ -25,43 +25,84 @@ public class Algebra {
 
 	// Returns x1 + x2
 	public static int plus(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int i = 0;
+		while (i < x2) {
+			x1++;
+			i++;
+		}
+		return x1;
 	}
 
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int i = 0;
+		while (i < x2) {
+			x1--;
+			i++;
+		}
+		return x1;
 	}
 
 	// Returns x1 * x2
 	public static int times(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int i = 0;
+		int sum = 0;
+		while (i < x2) {
+			sum = plus(sum, x1);
+			i++;
+		}
+		return sum;
 	}
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
-		// Replace the following statement with your code
-		return 0;
+		int i = 0;
+		int result = x;
+		while (i < n) {
+			result = times(result, x);
+			i++;
+		}
+		return result;
 	}
 
 	// Returns the integer part of x1 / x2 
 	public static int div(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int i = 0;
+		int num = x1;
+		while (num > 0) {
+			num = minus(num, x2);
+			i++;
+		}
+		if(num<0) i--;
+		return i;
+		
 	}
 
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
-		// Replace the following statement with your code
-		return 0;
+		int i = 0;
+		int num = x1;
+		while (num > 0) {
+			num = minus(num, x2);
+			i++;
+		}
+		if(num<0) {
+		num = plus(num, x2);
+		return num;
+		}
+		else return 0;
 	}	
 
 	// Returns the integer part of sqrt(x) 
 	public static int sqrt(int x) {
-		// Replace the following statement with your code
-		return 0;
+		int i = 1;
+		int num = x;
+		while (true) {
+			num = div(x, i);
+			if (num == i || i >= num) break;
+			i++;
+			
+		}
+		return num;
 	}	  	  
 }
