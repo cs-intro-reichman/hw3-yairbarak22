@@ -45,11 +45,31 @@ public class Algebra {
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) {
 		int i = 0;
+		int num = 0;
+		if (x2 == 0) return x1;
+		else if (x1 == 0) {
+			while(i < x2) { 
+			num--;
+			i++;
+
+		}
+		return num;
+	}
+		else if (x2 < 0) return plus(x1,x2);
+		else if (x1 < 0 && x2 > 0) {
+			while (i < plus(plus(x2,x2),x2)) {
+				x1--;
+				i++;
+			}
+			return x1;
+		}
+		else {
 		while (i < x2) {
 			x1--;
 			i++;
 		}
 		return x1;
+	}
 	}
 
 	// Returns x1 * x2
