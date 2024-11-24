@@ -27,6 +27,10 @@ public class Algebra {
 	public static int plus(int x1, int x2) {
 		int i = 0;
 		while (i < x2) {
+			if (x2 < 0 ) {
+				x1 = minus(x1, x2);
+				break;
+			}
 			x1++;
 			i++;
 		}
