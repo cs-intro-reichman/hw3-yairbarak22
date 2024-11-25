@@ -32,16 +32,16 @@ public class LoanCalc {
 	}
 	
     public static double bruteForceSolver(double loan, double rate, int n, double epsilon) {
-		double pay = 10000;
-		while (endBalance(loan, rate, n, pay) > 0) {
+		double pay = 0;
+		while (endBalance(loan, rate, n, pay) >= 0) {
 			pay += epsilon;
 			iterationCounter++;
 		}
 		return pay;
     }
     public static double bisectionSolver(double loan, double rate, int n, double epsilon) {  
-        double low = 1000;
-		double high = 20000;
+        double low = 0;
+		double high = 100000;
 		iterationCounter = 0;
 		double pay = (double) (high + low) / 2;	
 		while ((high-low) > epsilon) {
